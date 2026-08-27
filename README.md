@@ -1,6 +1,8 @@
 # Docka CI Components
 
-Reusable GitLab CI component for OIDC-first Docka deployments. It exchanges the GitLab job identity for a short-lived token restricted to one Docka app and environment, then deploys the exact `CI_COMMIT_SHA`.
+Reusable GitLab CI component source for OIDC-first Docka deployments. It exchanges the GitLab job identity for a short-lived token restricted to one Docka app and environment, then deploys the exact `CI_COMMIT_SHA`.
+
+The public GitLab.com consumption mirror is not published yet. The example below becomes valid after that mirror exists; do not reference it before then.
 
 ```yaml
 include:
@@ -31,6 +33,6 @@ The default wait is capped at 240 seconds to stay within the short-lived OIDC ex
 python test_component.py
 ```
 
-The GitHub repository is canonical. The GitLab.com project is the Catalog consumption mirror.
+The GitHub repository is canonical. A GitLab component project on the same GitLab instance is required for component consumption.
 
 Use an immutable release tag once the first public GitLab.com compatibility test is published. `main` is the pre-release integration target.
